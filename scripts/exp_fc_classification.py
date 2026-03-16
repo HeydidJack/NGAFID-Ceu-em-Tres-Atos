@@ -220,7 +220,7 @@ class Exp_FC(Exp_Basic):
             model = nn.DataParallel(model, device_ids=self.args.device_ids)
         return model
 
-    def _get_data(self, fold_index_list, fold_data_list, fold_label_list, test_fold_id=0):
+    def _get_data(self, fold_index_list, fold_data_list, fold_label_list, test_fold_id=0, scaler_save_path=None):
         """Prepare train/val/test with StandardScaler and optional Data Augmentation."""
         self.num_folds = 5
         assert 0 <= test_fold_id < self.num_folds
@@ -253,6 +253,10 @@ class Exp_FC(Exp_Basic):
         ori_shape_train = train_data_split.shape
         train_data_split_flat = train_data_split.reshape(-1, ori_shape_train[-1])
         scaler.fit(train_data_split_flat)
+        if scaler_save_path:
+            with open(os.path.join(scaler_save_path, 'scaler.pkl'), 'wb') as f:
+                pickle.dump(scaler, f)
+            print_aptxt(f"Scaler saved to {scaler_save_path}/scaler.pkl", Exp_log_path)
 
         # Transform train and val
         train_data_split = scaler.transform(train_data_split_flat).reshape(ori_shape_train)
@@ -398,7 +402,12 @@ class Exp_FC(Exp_Basic):
 
     def train(self, setting):
         """Main training loop for Fault Classification."""
-        self._get_data(fold_index_list, fold_data_list, fold_label_list, self.args.testfoldid)
+        path = os.path.join(f"{PROJECT_ROOT}/ModelCheckpoints", self.args.checkpoints,
+                            "FC_" + self.args.data_select_pattern, setting)
+        if self.args.save_model_path:
+            path = os.path.join(f"{PROJECT_ROOT}/ModelCheckpoints", self.args.save_model_path)
+        os.makedirs(path, exist_ok=True)
+        self._get_data(fold_index_list, fold_data_list, fold_label_list, self.args.testfoldid, scaler_save_path=path)
 
         total_train_start_time = time.time()
         epoch_times = []
@@ -406,11 +415,6 @@ class Exp_FC(Exp_Basic):
         print_aptxt(f"Train samples: {len(self.train_loader)}", Exp_log_path)
         print_aptxt(f"Val samples: {len(self.vali_loader)}", Exp_log_path)
         print_aptxt(f"Test samples: {len(self.test_loader)}", Exp_log_path)
-
-        path = os.path.join(f"{PROJECT_ROOT}/ModelCheckpoints", self.args.checkpoints, "FC_" + self.args.data_select_pattern, setting)
-        if self.args.save_model_path:
-            path = os.path.join(f"{PROJECT_ROOT}/ModelCheckpoints", self.args.save_model_path)
-        os.makedirs(path, exist_ok=True)
 
         time_now = time.time()
         train_steps = len(self.train_loader)

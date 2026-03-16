@@ -5,28 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="66159ee2-eae3-4cdd-b142-421d50cd740c" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/NGAFID-Ceu-em-Tres-Atos.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/ad_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/diagnosis_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/fc_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/fc_kd_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/exp_ad_detection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/exp_diagnosis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/exp_fc_classification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/exp_kel_ad.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/exp_kel_fc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/prepare_diagnosis_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/setup_dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/da_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/exp_logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/kel_model_factory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tools/model_factory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/exp_ad_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/exp_ad_detection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/exp_diagnosis.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/exp_diagnosis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/exp_fc_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/exp_fc_classification.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/exp_kel_ad.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/exp_kel_ad.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/exp_kel_fc.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/exp_kel_fc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +49,7 @@
     &quot;Python.setup_dataset.executor&quot;: &quot;Run&quot;,
     &quot;Python.tree.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -218,6 +202,10 @@
       <updated>1773546555121</updated>
       <workItem from="1773546556178" duration="50094000" />
       <workItem from="1773647258180" duration="1001000" />
+      <workItem from="1773650061792" duration="1204000" />
+      <workItem from="1773720043197" duration="602000" />
+      <workItem from="1775010384666" duration="1438000" />
+      <workItem from="1775012280086" duration="588000" />
     </task>
     <servers />
   </component>
